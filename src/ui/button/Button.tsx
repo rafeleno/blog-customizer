@@ -22,7 +22,10 @@ export const Button = ({
 				{ [styles.button_clear]: type === 'clear' }
 			)}
 			type={htmlType}
-			onClick={onClick}>
+			onClick={(e) => {
+				e.preventDefault();
+				onClick?.();
+			}}>
 			<Text weight={800} uppercase>
 				{title}
 			</Text>
